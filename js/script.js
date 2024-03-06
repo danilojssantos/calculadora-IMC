@@ -1,4 +1,5 @@
 import { Modal } from "./modal.js"
+import {AlertError} from"./alert-error.js"
 
 // variaveis 
 //pega pelo id do html e atribui para uma variavel no JS 
@@ -22,8 +23,10 @@ form.onsubmit = function(event){
     const showAlertError = notNumber(wheight) || notNumber(height)
      
     if (showAlertError) {
-        console.log("mostrar error")
+        AlertError.open()
         return
+    }else{
+        AlertError.close()
     }
      //console.log(notNumber(wheight))
      // console.log(notNumber(height))
