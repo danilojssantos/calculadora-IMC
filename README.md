@@ -4,6 +4,6 @@ Cálculo de IMC: Insira o peso (em kg) e a altura (em cm) para calcular automati
 
 Preencha os campos de peso e altura e clique no botão "Calcular IMC".
 
-Contribuição Contribuições são bem-vindas! Sinta-se à vontade para enviar pull requests ou abrir issues com sugestões, melhorias ou correções.
-
-Autor Tiago Lucas da Silva Licença Este projeto está sob a licença MIT.
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" width="40" height="40"  />
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="40" height="40"  />
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="40" height="40"  />
