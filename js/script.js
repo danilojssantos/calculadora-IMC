@@ -16,11 +16,18 @@ const inputWeight = document.querySelector('#weight')
 form.onsubmit = function(event){
     event.preventDefault()
      
-    //pega o valor digitado na input
+    
     const height = inputHeight.value
     const wheight = inputWeight.value
-   // console.log("deu bom ")
-   // console.log(height, wheight)
+    const showAlertError = notNumber(wheight) || notNumber(height)
+     
+    if (showAlertError) {
+        console.log("mostrar error")
+        return
+    }
+     //console.log(notNumber(wheight))
+     // console.log(notNumber(height))
+
 
     const result = IMC(wheight, height)
     const message = `Seu IMC é de ${result}`
@@ -31,7 +38,11 @@ form.onsubmit = function(event){
 
    // console.log(result)
 }
-            
+          
+
+function notNumber(value) {
+    return isNaN(value) || value == ""
+}
 
 
 function IMC(wheight, height) {
