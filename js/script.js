@@ -1,5 +1,6 @@
 import { Modal } from "./modal.js"
 import {AlertError} from"./alert-error.js"
+import { calculateIMC,notNumber } from "./utils.js"
 
 // variaveis 
 //pega pelo id do html e atribui para uma variavel no JS 
@@ -20,9 +21,9 @@ form.onsubmit = function(event){
     
     const height = inputHeight.value
     const wheight = inputWeight.value
-    const showAlertError = notNumber(wheight) || notNumber(height)
+    const wheightOrHeightIsNotANumber = notNumber(wheight) || notNumber(height)
      
-    if (showAlertError) {
+    if (wheightOrHeightIsNotANumber) {
         AlertError.open()
         return
     }else{
@@ -32,22 +33,18 @@ form.onsubmit = function(event){
      // console.log(notNumber(height))
 
 
-    const result = IMC(wheight, height)
-    const message = `Seu IMC é de ${result}`
+    const result = calculateIMC(wheight, height)
+        displayResultMessage(result)
 
-    Modal.message.innerText = message
-    Modal.open()
+    }
+
+    function displayResultMessage(result){
+        const message = `Seu IMC é de ${result}`
+
+        Modal.message.innerText = message
+        Modal.open()
     
 
    // console.log(result)
 }
-          
-
-function notNumber(value) {
-    return isNaN(value) || value == ""
-}
-
-
-function IMC(wheight, height) {
-    return(wheight / ((height / 100) ** 2)).toFixed(2)
-}
+     inputWeight.oninput=() => AlertError.close()
